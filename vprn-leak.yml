@@ -1,0 +1,23 @@
+name: vprn-leak
+
+prefix: ""
+topology:
+  defaults:
+    kind: nokia_srsim
+  kinds:
+    nokia_srsim:
+      type: sr-1
+      image: localhost/nokia/srsim:25.7.R1
+      license: srsim-license-257.txt
+  nodes:
+    pe1:
+    pe2:
+    ixp:
+    dc1:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:25.7.1
+  links:
+    - endpoints: ["pe1:1/1/c1/1", "pe2:1/1/c1/1"]
+    - endpoints: ["pe1:1/1/c2/1", "dc1:ethernet-1/1"]
+    - endpoints: ["pe2:1/1/c2/1", "dc1:ethernet-1/2"]
+    - endpoints: ["pe1:1/1/c3/1", "ixp:1/1/c3/1"]
