@@ -50,3 +50,19 @@ Dest Prefix[Flags]                            Type    Proto     Age        Pref
        Local VRF [2:to-IXP]                                         0
 -------------------------------------------------------------------------------
 ```
+
+Ping 5.5.5.5/32 from IXP:
+
+```srl
+A:admin@ixp# ping 5.5.5.5
+PING 5.5.5.5 56 data bytes
+64 bytes from 5.5.5.5: icmp_seq=1 ttl=63 time=5.80ms.
+64 bytes from 5.5.5.5: icmp_seq=2 ttl=63 time=2.74ms.
+64 bytes from 5.5.5.5: icmp_seq=3 ttl=63 time=2.14ms.
+64 bytes from 5.5.5.5: icmp_seq=4 ttl=63 time=3.48ms.
+64 bytes from 5.5.5.5: icmp_seq=5 ttl=63 time=1.54ms.
+
+---- 5.5.5.5 PING Statistics ----
+5 packets transmitted, 5 packets received, 0.00% packet loss
+round-trip min = 1.54ms, avg = 3.14ms, max = 5.80ms, stddev = 1.48ms
+```
