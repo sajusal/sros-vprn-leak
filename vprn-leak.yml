@@ -11,11 +11,15 @@ topology:
       license: srsim-license-257.txt
   nodes:
     pe1:
+      startup-config: configs/pe1-config.cfg
     pe2:
+      startup-config: configs/pe2-config.cfg
     ixp:
+      startup-config: configs/ixp-config.cfg
     dc1:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:25.7.1
+      startup-config: configs/dc1-config.json
   links:
     - endpoints: ["pe1:1/1/c1/1", "pe2:1/1/c1/1"]
     - endpoints: ["pe1:1/1/c2/1", "dc1:ethernet-1/1"]
